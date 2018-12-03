@@ -25,11 +25,12 @@ if (isset($_SESSION['username'])) {
         <div class="cleaner"></div>     
     </div>
     <div id="menu">
-        <ul>
+         <ul>
             <li><a href="index.php" ><span></span>Блог</a></li>
 			<li><a href="contact.php"><span></span>Контакты</a></li>
 			<?php if (isset($_SESSION['username'])) { ?>
 				<li><a href="create.php"><span></span>Создать запись</a></li>
+				<li><a href="database.php"><span></span>Собаки</a></li>
 				<li><a href="logout.php"><span></span>Выйти</a></li>
 			<?php }else{ ?>
 				<li><a href="registr.php"><span></span>Регистрация</a></li>
@@ -49,9 +50,6 @@ if (isset($_SESSION['username'])) {
         <button class="btn btn-lg btn-primary btn-block" type="submit">Login </button>
     </form>
 </div>
-
-
-
         </div>
         <div id="sidebar">        
         	<div id="aboutus">

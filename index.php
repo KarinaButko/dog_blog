@@ -32,6 +32,7 @@
 			<li><a href="contact.php"><span></span>Контакты</a></li>
 			<?php if (isset($_SESSION['username'])) { ?>
 				<li><a href="create.php"><span></span>Создать запись</a></li>
+				<li><a href="database.php"><span></span>Собаки</a></li>
 				<li><a href="logout.php"><span></span>Выйти</a></li>
 			<?php }else{ ?>
 				<li><a href="registr.php"><span></span>Регистрация</a></li>
@@ -43,10 +44,10 @@
         <div id="content"> 
 			<?php include 'connect.php' ?>
 				<?php 
-					$stn = $pdo->query("SELECT * FROM dogs ORDER BY id DESC");
+					$stn = $pdo->query("SELECT * FROM news ORDER BY id DESC");
 					foreach ($stn as $item) {
 						echo '<div class="post_box">';
-						echo '<h2><a href="#">' . $item['name'] . '</a></h2>';
+						echo '<h2><a href="#">' . $item['title'] . '</a></h2>';
 						echo '<div class="image_wrapper"><a href="#"><img src="' . $item['img'] . '" alt="image 1" /></a></div>';
 						echo '<p align="justify">' . $item['descript'] . '</p>';
 						echo '<div class="cleaner"></div>';

@@ -34,14 +34,15 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
         <div class="cleaner"></div>     
     </div>
     <div id="menu">
-        <ul>
-            <li><a href="index.php" ><span></span>Блог</a></li>
+         <ul>
+            <li><a href="index.php"><span></span>Блог</a></li>
 			<li><a href="contact.php"><span></span>Контакты</a></li>
 			<?php if (isset($_SESSION['username'])) { ?>
 				<li><a href="create.php" class="current"><span></span>Создать запись</a></li>
+				<li><a href="database.php"><span></span>Собаки</a></li>
 				<li><a href="logout.php"><span></span>Выйти</a></li>
 			<?php }else{ ?>
-				<li><a href="registr.php" ><span></span>Регистрация</a></li>
+				<li><a href="registr.php"><span></span>Регистрация</a></li>
 				<li><a href="login.php"><span></span>Авторизация</a></li> 
 			<?php }	?>	
         </ul>
@@ -51,8 +52,8 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
  
 <div class="container">
 	<form enctype="multipart/form-data" class="form-signin" method="POST" action="create_server.php">
-		<h2>Create Dog</h2>
-		<input type="text" name="name" class="form-control" placeholder="name" required> <br><br>
+		<h2>Create News</h2>
+		<input type="text" name="title" class="form-control" placeholder="name" required> <br><br>
 		<textarea placeholder="descript" name="descript" cols="60" rows="5" required></textarea><br><br>
 		<input type="file" name="img" accept="image/*" required><br><br>
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Create </button>
